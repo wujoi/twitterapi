@@ -1,33 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Wu&#39;s (not so poignant) Guide to Ruby by wujoi</title>
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
     <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Wu&#39;s (not so poignant) Guide to Ruby by wujoi</title>
   </head>
+
   <body>
-    <div class="wrapper">
+    <a id="forkme_banner" href="https://github.com/wujoi/vader2016">View on GitHub</a>
+    <div class="shell">
+
       <header>
-        <h1>Wu&#39;s (not so poignant) Guide to Ruby</h1>
-        <p>DISCLAIMER: There are no cartoon foxes, no dark yet whimsical anecdotes about weezards and whatnot, and just forget about it if you&#39;re looking for the elf and his pet ham.</p>
-
-        <p class="view"><a href="https://github.com/wujoi/vader2016">View the Project on GitHub <small>wujoi/vader2016</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/wujoi/vader2016/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/wujoi/vader2016/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/wujoi/vader2016">View On <strong>GitHub</strong></a></li>
-        </ul>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Wu&#39;s (not so poignant) Guide to Ruby</h1>
+            <h2>DISCLAIMER: There are no cartoon foxes, no dark yet whimsical anecdotes about weezards and whatnot, and just forget about it if you&#39;re looking for the elf and his pet ham.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
       </header>
-      <section>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/wujoi/vader2016/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/wujoi/vader2016/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
         <h3>
 <a id="chapter-one-introduction" class="anchor" href="#chapter-one-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter One: Introduction</h3>
 
@@ -38,7 +56,7 @@
 <p>Alright, let's make one thing clear right now. This Ruby guide will <em>not</em> be like middle school Spanish. Yes, you will have to learn vocabulary. And no, you cannot cheat off of Tommy Jean. But I am not Ms. Jones; I do not wear pantsuits and I will not take attendance or give you Friday quizzes. If you want to an "A" in Ruby, you <em>will</em> need to learn the vocabulary, but you will also need to practice practice practice the writing and reading exercises found <a href="http://learnrubythehardway.org/book/index.html">here</a>. Good luck!      </p>
 
 <h3>
-<a id="chapter-two-vocabulary-part-1" class="anchor" href="#chapter-two-vocabulary-part-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter Two: Vocabulary Part 1</h3>
+<a id="chapter-two-vocabulary" class="anchor" href="#chapter-two-vocabulary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter Two: Vocabulary</h3>
 
 <ul>
 <li>
@@ -80,79 +98,76 @@
 <li>
 <strong>Keywords</strong>: built-in words with imbedded meanings: 
 
-<ul>
-<li>alias<br>
-</li>
-<li>and<br>
-</li>
-<li>BEGIN<br>
-</li>
-<li>begin<br>
-</li>
-<li>break<br>
-</li>
-<li>case<br>
-</li>
-<li>class<br>
-</li>
-<li>def<br>
-</li>
-<li>defined</li>
-<li>do<br>
-</li>
-<li>else<br>
-</li>
-<li>elsif<br>
-</li>
-<li>END<br>
-</li>
-<li>end<br>
-</li>
-<li>ensure<br>
-</li>
-<li>false<br>
-</li>
-<li>for<br>
-</li>
-<li>if</li>
-<li>in<br>
-</li>
-<li>module<br>
-</li>
-<li>next<br>
-</li>
-<li>nil<br>
-</li>
-<li>not<br>
-</li>
-<li>or<br>
-</li>
-<li>redo<br>
-</li>
-<li>rescue<br>
-</li>
-<li>retry</li>
-<li>return<br>
-</li>
-<li>self<br>
-</li>
-<li>super<br>
-</li>
-<li>then<br>
-</li>
-<li>true<br>
-</li>
-<li>undef<br>
-</li>
-<li>unless<br>
-</li>
-<li>until<br>
-</li>
-<li>when</li>
-<li>while<br>
-</li>
-<li>yield</li>
-</ul>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>alias</td>
+      <td>and</td>
+      <td>BEGIN</td>
+    </tr>
+    <tr> 
+      <td>begin</td>
+      <td>break</td>
+      <td>case</td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td>def</td>
+      <td>defined</td>
+    </tr>
+    <tr>
+      <td>do</td>
+      <td>else</td>
+      <td>elseif</td>
+    </tr>
+    <tr>
+      <td>END</td>
+      <td>end</td>
+      <td>ensure</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>for</td>
+      <td>if</td> 
+    </tr>
+    <tr>
+      <td>in</td>
+      <td>module</td>
+      <td>next</td> 
+    </tr>
+    <tr>
+      <td>nil</td>
+      <td>not</td>
+      <td>or</td>
+    </tr>
+    <tr>
+      <td>redo</td> 
+      <td>rescue</td>
+      <td>retry</td>
+    </tr>
+    <tr>
+      <td>return</td>
+      <td>self</td>
+      <td>super</td>
+    </tr>
+    <tr>
+      <td>then</td>
+      <td>true</td>
+      <td>undef</td>
+    </tr>
+    <tr>
+      <td>unless</td>
+      <td>until</td>
+      <td>when</td>
+    </tr>
+    <tr>
+      <td>while</td>
+      <td>yield</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
 </li>
 <li>
 <strong>Nil</strong>: no value, not undefined but empty (plastic_cup = nil; if plastic_cup; print “hello”; end) &lt;- will not print out anything</li>
@@ -168,24 +183,30 @@
 </ul>
 
 <h3>
-<a id="chapter-three-the-unrelated-chapter-where-i-talk-about-dyson" class="anchor" href="#chapter-three-the-unrelated-chapter-where-i-talk-about-dyson" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Chapter Three: The Unrelated Chapter Where I Talk About Dyson</h3>
-
-<h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
 <p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
 <h3>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
 
-<p>If you have any comments, criticisms, or suggestions, feel free to contact me. I am not going to provide you with my email or phone number but hey, this is internet! I'm sure you'll find a way.</p>
+<p>If you have any comments, crticisms, or suggestions, feel free to contact me. I am not going to provide you with my email or phone number but hey, this is internet! I'm sure you'll find a way.</p>
       </section>
+
       <footer>
-        <p>This project is maintained by <a href="https://github.com/wujoi">wujoi</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/wujoi">wujoi</a> can be found on <a href="https://github.com/wujoi/vader2016">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
   </body>
 </html>
